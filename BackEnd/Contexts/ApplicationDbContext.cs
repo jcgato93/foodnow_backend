@@ -24,6 +24,7 @@ namespace BackEnd.Contexts
         public DbSet<PayType> PayTypes { get; set; }
         public DbSet<Sale> Sales { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<RestaurantCategory> RestaurantCategories { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
