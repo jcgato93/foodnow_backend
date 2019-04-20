@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using BackEnd.Contexts;
+using BackEnd.DTOs;
 using BackEnd.Models;
 using BackEnd.Repositories;
 using BackEnd.Repositories.Implements;
+using BackEnd.Services;
+using BackEnd.Services.Implements;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -103,6 +107,20 @@ namespace BackEnd
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
 
+            // AutoMapper , Transformacion de las entidades a DTOs
+            services.AddAutoMapper(options =>
+            {
+                options.CreateMap<BranchDTO, Branch>();
+                options.CreateMap<CategoryDTO, Category>();
+                options.CreateMap<OrderDTO, Order>();
+                options.CreateMap<PayTypeDTO, PayType>();
+                options.CreateMap<ProductDTO, Product>();
+                options.CreateMap<RestaurantDTO, Restaurant>();
+                options.CreateMap<RestaurantCategoryDTO, RestaurantCategory>();
+                options.CreateMap<SaleDTO, Sale>();
+                options.CreateMap<StateDTO, State>();
+            });
+
             // Repositories
             services.AddScoped<IBranchRepository, BranchRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
@@ -111,7 +129,19 @@ namespace BackEnd
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IRestaurantRepository, RestaurantRepository>();
             services.AddScoped<ISaleRepository, SaleRepository>();
-            services.AddScoped<IStateRepository, StateRepository>();            
+            services.AddScoped<IStateRepository, StateRepository>();
+            services.AddScoped<IRestaurantCategoryRepository, RestaurantCategoryRepository>();
+
+            // Services
+            services.AddSingleton<IBranchService, BranchService>();
+            services.AddSingleton<ICategoryService, CategoryService>();
+            services.AddSingleton<IOrderService, OrderService>();
+            services.AddSingleton<IPayTypeService, PayTypeService>();
+            services.AddSingleton<IProductService, ProductService>();
+            services.AddSingleton<IRestaurantService, RestaurantService>();
+            services.AddSingleton<ISaleService, SaleService>();
+            services.AddSingleton<IStateService, StateService>();
+            services.AddSingleton<IRestaurantCategoryService, RestaurantCategoryService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
