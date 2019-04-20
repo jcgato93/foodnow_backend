@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using BackEnd.Contexts;
 using BackEnd.Models;
+using BackEnd.Repositories;
+using BackEnd.Repositories.Implements;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -97,7 +99,19 @@ namespace BackEnd
                     ClockSkew = TimeSpan.Zero
                 });
 
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+
+            // Repositories
+            services.AddScoped<IBranchRepository, BranchRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IPayTypeRepository, PayTypeRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IRestaurantRepository, RestaurantRepository>();
+            services.AddScoped<ISaleRepository, SaleRepository>();
+            services.AddScoped<IStateRepository, StateRepository>();            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

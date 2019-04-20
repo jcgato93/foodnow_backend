@@ -23,6 +23,12 @@ namespace BackEnd.Contexts
         public DbSet<State> States { get; set; }
         public DbSet<PayType> PayTypes { get; set; }
         public DbSet<Sale> Sales { get; set; }
-        public DbSet<Order> Orders { get; set; }        
+        public DbSet<Order> Orders { get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+        }
     }
 }
