@@ -27,9 +27,7 @@ namespace BackEnd.Models
 
         [StringLength(500)]
         public string ImageUrl { get; set; }
-
-
-        public virtual ICollection<Sale> Sales { get; set; }
+        
 
         // ==== Foraneas ======
         [ForeignKey(nameof(RestaurantId))]

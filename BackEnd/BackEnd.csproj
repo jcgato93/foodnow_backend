@@ -8,6 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20190420014457_add_Initial_POCOS.cs" />
+    <Compile Remove="Migrations\20190420014457_add_Initial_POCOS.Designer.cs" />
+    <Compile Remove="Migrations\20190420020052_add_initial_pocos.cs" />
+    <Compile Remove="Migrations\20190420020052_add_initial_pocos.Designer.cs" />
+    <Compile Remove="Migrations\20190420021528_add_initial_pocos.cs" />
+    <Compile Remove="Migrations\20190420021528_add_initial_pocos.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.2105168" />

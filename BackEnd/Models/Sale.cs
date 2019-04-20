@@ -13,10 +13,10 @@ namespace BackEnd.Models
         public long Id { get; set; }
 
         [Required]
-        public long OrderId { get; set; }
+        public long? OrderId { get; set; }
 
-        [Required]
-        public int ProductId { get; set; }
+        
+        public int? ProductId { get; set; }
 
 
         // Precio del producto cuando se vendio
