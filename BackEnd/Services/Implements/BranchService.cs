@@ -1,4 +1,5 @@
 ﻿using BackEnd.Models;
+using BackEnd.Repositories;
 using BackEnd.Repositories.Implements;
 using System;
 using System.Collections.Generic;
@@ -9,9 +10,9 @@ namespace BackEnd.Services.Implements
 {
     public class BranchService : GenericService<Branch>, IBranchService
     {
-        private BranchRepository genericRepository;
+        private IBranchRepository genericRepository;
 
-        public BranchService(BranchRepository genericRepository)
+        public BranchService(IBranchRepository genericRepository)
              : base(genericRepository)
         {
             this.genericRepository = genericRepository;

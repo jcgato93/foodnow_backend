@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace BackEnd.Repositories
 {
-    public interface IGenericRepository<TEntity> : IDisposable
+    public interface IGenericRepository<TEntity> 
          where TEntity : class
     {
         IQueryable<TEntity> GetAll();

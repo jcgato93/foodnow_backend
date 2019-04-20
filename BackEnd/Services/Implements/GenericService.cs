@@ -11,9 +11,9 @@ namespace BackEnd.Services.Implements
     {
         private IGenericRepository<TEntity> _genericRepository;
 
-        public GenericService(IGenericRepository<TEntity> genericRepository)
+        public GenericService(IGenericRepository<TEntity> _genericRepository)
         {
-            _genericRepository = genericRepository;
+            this._genericRepository = _genericRepository;
         }
 
         public async Task Delete(int id)

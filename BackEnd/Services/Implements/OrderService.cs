@@ -1,4 +1,5 @@
 ﻿using BackEnd.Models;
+using BackEnd.Repositories;
 using BackEnd.Repositories.Implements;
 using System;
 using System.Collections.Generic;
@@ -9,9 +10,9 @@ namespace BackEnd.Services.Implements
 {
     public class OrderService : GenericService<Order>, IOrderService
     {
-        private OrderRepository orderRepository;
+        private IOrderRepository orderRepository;
 
-        public OrderService(OrderRepository orderRepository)
+        public OrderService(IOrderRepository orderRepository)
              : base(orderRepository)
         {
             this.orderRepository = orderRepository;

@@ -103,10 +103,6 @@ namespace BackEnd
                     ClockSkew = TimeSpan.Zero
                 });
 
-
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
-
             // AutoMapper , Transformacion de las entidades a DTOs
             services.AddAutoMapper(options =>
             {
@@ -121,7 +117,7 @@ namespace BackEnd
                 options.CreateMap<StateDTO, State>();
             });
 
-            // Repositories
+            // Repositories            
             services.AddScoped<IBranchRepository, BranchRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
@@ -132,16 +128,20 @@ namespace BackEnd
             services.AddScoped<IStateRepository, StateRepository>();
             services.AddScoped<IRestaurantCategoryRepository, RestaurantCategoryRepository>();
 
+
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+         
             // Services
-            services.AddSingleton<IBranchService, BranchService>();
-            services.AddSingleton<ICategoryService, CategoryService>();
-            services.AddSingleton<IOrderService, OrderService>();
-            services.AddSingleton<IPayTypeService, PayTypeService>();
-            services.AddSingleton<IProductService, ProductService>();
-            services.AddSingleton<IRestaurantService, RestaurantService>();
-            services.AddSingleton<ISaleService, SaleService>();
-            services.AddSingleton<IStateService, StateService>();
-            services.AddSingleton<IRestaurantCategoryService, RestaurantCategoryService>();
+            services.AddTransient<IBranchService, BranchService>();
+            services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IOrderService, OrderService>();
+            services.AddTransient<IPayTypeService, PayTypeService>();
+            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IRestaurantService, RestaurantService>();
+            services.AddTransient<ISaleService, SaleService>();
+            services.AddTransient<IStateService, StateService>();
+            services.AddTransient<IRestaurantCategoryService, RestaurantCategoryService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

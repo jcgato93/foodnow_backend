@@ -1,4 +1,5 @@
 ﻿using BackEnd.Models;
+using BackEnd.Repositories;
 using BackEnd.Repositories.Implements;
 using System;
 using System.Collections.Generic;
@@ -9,9 +10,9 @@ namespace BackEnd.Services.Implements
 {
     public class SaleService : GenericService<Sale>, ISaleService
     {
-        private SaleRepository saleRepository;
+        private ISaleRepository saleRepository;
 
-        public SaleService(SaleRepository saleRepository)
+        public SaleService(ISaleRepository saleRepository)
              : base(saleRepository)
         {
             this.saleRepository = saleRepository;

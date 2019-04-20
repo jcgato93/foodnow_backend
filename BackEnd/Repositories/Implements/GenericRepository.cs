@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BackEnd.Repositories.Implements
 {
-    public class GenericRepository<TEntity> : IGenericRepository<TEntity>, IDisposable
+    public class GenericRepository<TEntity> : IGenericRepository<TEntity>
            where TEntity : class
     {
         private readonly ApplicationDbContext _dbContext;
@@ -24,7 +24,7 @@ namespace BackEnd.Repositories.Implements
 
         public async Task<TEntity> GetById(int id)
         {
-            return await _dbContext.Set<TEntity>().FindAsync(id);                                                ;
+            return await _dbContext.Set<TEntity>().FindAsync(id);
         }
 
         public async Task Insert(TEntity entity)
@@ -49,26 +49,5 @@ namespace BackEnd.Repositories.Implements
             await _dbContext.SaveChangesAsync();
         }
 
-
-
-        private bool disposed = false;
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!this.disposed)
-            {
-                if (disposing)
-                {
-                    _dbContext.Dispose();
-                }
-            }
-            this.disposed = true;
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
     }
 }

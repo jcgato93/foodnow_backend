@@ -1,4 +1,5 @@
 ﻿using BackEnd.Models;
+using BackEnd.Repositories;
 using BackEnd.Repositories.Implements;
 using System;
 using System.Collections.Generic;
@@ -9,9 +10,9 @@ namespace BackEnd.Services.Implements
 {
     public class RestaurantService : GenericService<Restaurant>, IRestaurantService
     {
-        private RestaurantRepository restaurantRepository;
+        private IRestaurantRepository restaurantRepository;
 
-        public RestaurantService(RestaurantRepository restaurantRepository)
+        public RestaurantService(IRestaurantRepository restaurantRepository)
              : base(restaurantRepository)
         {
             this.restaurantRepository = restaurantRepository;

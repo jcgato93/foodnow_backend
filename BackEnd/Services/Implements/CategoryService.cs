@@ -1,4 +1,5 @@
 ﻿using BackEnd.Models;
+using BackEnd.Repositories;
 using BackEnd.Repositories.Implements;
 using System;
 using System.Collections.Generic;
@@ -9,9 +10,9 @@ namespace BackEnd.Services.Implements
 {
     public class CategoryService : GenericService<Category>, ICategoryService
     {
-        private CategoryRepository categoryRepository;
+        private ICategoryRepository categoryRepository;
 
-        public CategoryService(CategoryRepository categoryRepository)
+        public CategoryService(ICategoryRepository categoryRepository)
              : base(categoryRepository)
         {
             this.categoryRepository = categoryRepository;

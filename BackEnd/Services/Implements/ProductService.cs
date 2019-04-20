@@ -1,4 +1,5 @@
 ﻿using BackEnd.Models;
+using BackEnd.Repositories;
 using BackEnd.Repositories.Implements;
 using System;
 using System.Collections.Generic;
@@ -9,9 +10,9 @@ namespace BackEnd.Services.Implements
 {
     public class ProductService : GenericService<Product>, IProductService
     {
-        private ProductRepository productRepository;
+        private IProductRepository productRepository;
 
-        public ProductService(ProductRepository productRepository)
+        public ProductService(IProductRepository productRepository)
              : base(productRepository)
         {
             this.productRepository = productRepository;
