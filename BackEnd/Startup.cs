@@ -132,6 +132,15 @@ namespace BackEnd
 
             app.UseHttpsRedirection();
 
+
+            // Configuracion de data por defecto en la base de datos
+            using (var scope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = scope.ServiceProvider.GetService<ApplicationDbContext>();
+                context.Database.Migrate();
+                context.EnsureDatabaseSeeded();
+            }
+
             // Activar sistema de autenticacion
             app.UseAuthentication(); 
             app.UseMvc();
