@@ -8,5 +8,6 @@ namespace BackEnd.Services
 {
     public interface IRestaurantCategoryService : IGenericService<RestaurantCategory>
     {
+        Task<PaginationModel<Category>> GetCategoryByRestaurantId(int restaurantId, int pageIndex = 0,int pageSize= 10);
     }
 }

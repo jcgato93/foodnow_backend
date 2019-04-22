@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 namespace BackEnd.Services
 {
     public interface ICategoryService : IGenericService<Category>
-    {
+    {        
     }
 }

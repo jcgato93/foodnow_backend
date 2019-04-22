@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 namespace BackEnd.Repositories
 {
     public interface ICategoryRepository: IGenericRepository<Category>
-    {
+    {        
     }
 }

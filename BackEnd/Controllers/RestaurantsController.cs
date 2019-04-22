@@ -25,17 +25,17 @@ namespace BackEnd.Controllers
         }
 
 
-        [HttpGet("ListaRestaurantes")]
-        public ActionResult GetAll([FromQuery]int? pageIndex=0,[FromQuery]int? pageSize=10)
+        [HttpGet("GetAll")]
+        public ActionResult GetAll([FromQuery]int pageIndex=0,[FromQuery]int pageSize=10)
         {
             var resultPaginated = restaurantService.GetAll((int)pageIndex,(int)pageSize);            
 
             Response.Headers["X-Total-Registros"] = resultPaginated.Count.ToString();            
             Response.Headers["X-Cantidad-Paginas"] = ((int)Math.Ceiling((double)resultPaginated.Count / resultPaginated.PageSize)).ToString();
 
-            var restaurantDTO = mapper.Map<List<RestaurantDTO>>(resultPaginated.Data);
+            var dto = mapper.Map<List<RestaurantDTO>>(resultPaginated.Data);
 
-            return Ok(restaurantDTO);            
+            return Ok(dto);            
         }
     }
 }
