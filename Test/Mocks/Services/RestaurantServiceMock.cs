@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BackEndTest.Mocks.Services
+namespace Test.Mocks
 {
     public class RestaurantServiceMock : IRestaurantService
     {
@@ -23,7 +23,7 @@ namespace BackEndTest.Mocks.Services
         public Task Delete(int id)
         {
             throw new NotImplementedException();
-        }     
+        }
 
         public Task<Restaurant> GetById(int id)
         {

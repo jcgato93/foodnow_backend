@@ -2,10 +2,10 @@
 using BackEnd.Services;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace BackEndTest.Mocks.Services
+namespace Test.Mocks
 {
     public class RestaurantCategoryServiceMock : IRestaurantCategoryService
     {
@@ -50,7 +50,7 @@ namespace BackEndTest.Mocks.Services
         public Task<RestaurantCategory> GetById(int id)
         {
             throw new NotImplementedException();
-        }        
+        }
 
         public Task Insert(RestaurantCategory entity)
         {

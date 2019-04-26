@@ -5,11 +5,10 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BackEndTest.Mocks.Services
+namespace Test.Mocks
 {
     public class CategoryServiceMock : ICategoryService
     {
-        
         public Task Delete(int id)
         {
             throw new NotImplementedException();
@@ -24,8 +23,6 @@ namespace BackEndTest.Mocks.Services
         {
             throw new NotImplementedException();
         }
-
-        
 
         public Task Insert(Category entity)
         {

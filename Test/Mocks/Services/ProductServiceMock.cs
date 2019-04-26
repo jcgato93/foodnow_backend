@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BackEndTest.Mocks.Services
+namespace Test.Mocks
 {
     public class ProductServiceMock : IProductService
     {
@@ -52,7 +52,7 @@ namespace BackEndTest.Mocks.Services
             throw new NotImplementedException();
         }
 
-        
+
 
         public Task Insert(Product entity)
         {
@@ -64,6 +64,5 @@ namespace BackEndTest.Mocks.Services
             throw new NotImplementedException();
         }
 
-       
     }
 }
