@@ -25,7 +25,7 @@ namespace BackEnd.Controllers
         }
 
 
-        [HttpGet("GetProductsByCategoryId/{categoryId}")]
+        [HttpGet("GetProductsByCategoryId/{categoryId}")]       
         public async Task<ActionResult> GetCategoriesByRestaurantId(int categoryId, [FromQuery]int pageIndex = 0, [FromQuery]int pageSize = 10)
         {
             var resultPaginated = await productService.GetProductsByCategoryId(categoryId, pageIndex, pageSize);

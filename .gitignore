@@ -28,9 +28,7 @@ bld/
 #wwwroot/
 
 # Ignorar el codigo de mvc pages
-Areas/
-Pages/
-wwwroot/
+
 ScaffoldingReadme.txt
 
 # MSTest test Results

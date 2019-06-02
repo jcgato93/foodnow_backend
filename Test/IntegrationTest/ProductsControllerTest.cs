@@ -52,7 +52,7 @@ namespace Test.IntegrationTest
 
             var result = JsonConvert.DeserializeObject<IEnumerable<ProductDTO>>(await response.Content.ReadAsStringAsync());
             Assert.IsNotNull(result);
-            Assert.AreEqual(expected: 2, actual: result.LongCount());
+            Assert.AreEqual(expected: 1, actual: result.LongCount());
             Assert.AreEqual(expected: "Product1", actual: result.ElementAt(0).Name);
         }
 
