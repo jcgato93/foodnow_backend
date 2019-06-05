@@ -25,10 +25,10 @@ namespace BackEnd.Controllers
         }
 
 
-        [HttpGet("GetProductsByCategoryId/{categoryId}")]       
-        public async Task<ActionResult> GetCategoriesByRestaurantId(int categoryId, [FromQuery]int pageIndex = 0, [FromQuery]int pageSize = 10)
+        [HttpGet("GetProductsByCategoryId")]       
+        public async Task<ActionResult> GetCategoriesByRestaurantId(int restaurantId,int categoryId, [FromQuery]int pageIndex = 0, [FromQuery]int pageSize = 10)
         {
-            var resultPaginated = await productService.GetProductsByCategoryId(categoryId, pageIndex, pageSize);
+            var resultPaginated = await productService.GetProductsByCategoryId(restaurantId, categoryId, pageIndex, pageSize);
 
             Response.Headers["X-Total-Registros"] = resultPaginated.Count.ToString();
             Response.Headers["X-Cantidad-Paginas"] = ((int)Math.Ceiling((double)resultPaginated.Count / resultPaginated.PageSize)).ToString();

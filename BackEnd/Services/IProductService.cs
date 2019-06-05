@@ -8,6 +8,6 @@ namespace BackEnd.Services
 {
     public interface IProductService : IGenericService<Product>
     {
-        Task<PaginationModel<Product>> GetProductsByCategoryId(int categoryId, int pageIndex = 0, int pageSize = 10);
+        Task<PaginationModel<Product>> GetProductsByCategoryId(int restaurantId,int categoryId, int pageIndex = 0, int pageSize = 10);
     }
 }

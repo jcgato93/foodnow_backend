@@ -9,7 +9,7 @@ namespace Test.Mocks
 {
     public class ProductServiceMock : IProductService
     {
-        public Task<PaginationModel<Product>> GetProductsByCategoryId(int categoryId, int pageIndex = 0, int pageSize = 10)
+        public Task<PaginationModel<Product>> GetProductsByCategoryId(int restarantId,int categoryId, int pageIndex = 0, int pageSize = 10)
         {
             if (categoryId > 0)
             {
